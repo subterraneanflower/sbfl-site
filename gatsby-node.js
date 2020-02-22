@@ -63,6 +63,8 @@ exports.createPages = async ({ graphql, actions }) => {
   for (const post of allPosts) {
     const pagePath = buildPath(new Date(post.publishedAt), post.slug);
     const content = post.compat === 'sbfl_wp_2013' ? post.content.content : post.content.childMarkdownRemark.html;
+    const dom = JSDOM.fragment(content);
+    const excerpt = dom.textContent.slice(0, 80) + '…';
     const author = {
       name: post.author.name,
       avatarUrl: post.author.avatar.file.url,
@@ -83,6 +85,7 @@ exports.createPages = async ({ graphql, actions }) => {
           category: post.category,
           tags: post.tags || [],
           author,
+          excerpt,
           content,
           publishedAt: post.publishedAt
         },

@@ -4210,6 +4210,7 @@ export type SitePageContextArticleData = {
   category?: Maybe<Scalars['String']>,
   tags?: Maybe<Array<Maybe<Scalars['String']>>>,
   author?: Maybe<SitePageContextArticleDataAuthor>,
+  excerpt?: Maybe<Scalars['String']>,
   content?: Maybe<Scalars['String']>,
   publishedAt?: Maybe<Scalars['Date']>,
 };
@@ -4239,6 +4240,7 @@ export type SitePageContextArticleDataFilterInput = {
   category?: Maybe<StringQueryOperatorInput>,
   tags?: Maybe<StringQueryOperatorInput>,
   author?: Maybe<SitePageContextArticleDataAuthorFilterInput>,
+  excerpt?: Maybe<StringQueryOperatorInput>,
   content?: Maybe<StringQueryOperatorInput>,
   publishedAt?: Maybe<DateQueryOperatorInput>,
 };
@@ -4435,6 +4437,7 @@ export type SitePageFieldsEnum =
   'context___articleData___author___twitter' |
   'context___articleData___author___gitHub' |
   'context___articleData___author___email' |
+  'context___articleData___excerpt' |
   'context___articleData___content' |
   'context___articleData___publishedAt' |
   'context___blogData___recentPosts' |

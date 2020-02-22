@@ -20,6 +20,7 @@ export type ArticleData = {
   category: string;
   tags: string[];
   author: Author;
+  excerpt: string;
   content: string;
   publishedAt: string;
 };

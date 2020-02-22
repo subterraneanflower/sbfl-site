@@ -31,7 +31,7 @@ const StyledSidebar = styled(Sidebar)`
 
 const SingleArticlePageComponent = (props: SingleArticlePageComponentProp) => (
   <Layout siteMetadata={{ title: 'Subterranean Flower Blog' }} headerLinkTo="/blog/">
-    <SEO title={props.pageContext.articleData.title} />
+    <SEO title={props.pageContext.articleData.title} description={props.pageContext.articleData.excerpt} />
     <div className={props.className}>
       <Article className="page-article" articleData={props.pageContext.articleData} />
       <StyledSidebar blogData={props.pageContext.blogData} />
