@@ -1,0 +1,6 @@
+/blog/feed/                /feed/index.xml    200
+/blog/feed/index.html      /feed/index.xml    200
+/blog/feed/index.php       /feed/index.xml    200
+/blog/feed/atom/           /feed/             301
+/blog/feed/atom/index.html /feed/ 301
+/blog/feed/atom/index.php  /feed/ 301

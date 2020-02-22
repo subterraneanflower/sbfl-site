@@ -15,6 +15,15 @@ type SidebarComponentProps = {
 const SidebarComponent = ({ className, blogData: articleData }: SidebarComponentProps) => (
   <aside className={className}>
     <Card className="sidebar-card">
+      <h2>RSS</h2>
+      <ul className="recent-posts">
+        <li>
+          <Link to="/blog/feed/index.xml">RSS Feed</Link>
+        </li>
+      </ul>
+    </Card>
+
+    <Card className="sidebar-card">
       <h2>最近の投稿</h2>
       <ul className="recent-posts">
         {articleData.recentPosts.map((p) => (

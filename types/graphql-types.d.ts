@@ -4132,6 +4132,7 @@ export type SiteFieldsEnum =
   'siteMetadata___title' |
   'siteMetadata___description' |
   'siteMetadata___author' |
+  'siteMetadata___siteUrl' |
   'polyfill' |
   'pathPrefix' |
   'buildTime';
@@ -4516,6 +4517,11 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___downloadLocal' |
   'pluginCreator___pluginOptions___fileName' |
   'pluginCreator___pluginOptions___trackingId' |
+  'pluginCreator___pluginOptions___feeds' |
+  'pluginCreator___pluginOptions___feeds___query' |
+  'pluginCreator___pluginOptions___feeds___output' |
+  'pluginCreator___pluginOptions___feeds___title' |
+  'pluginCreator___pluginOptions___feeds___match' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
@@ -4719,6 +4725,11 @@ export type SitePluginFieldsEnum =
   'pluginOptions___downloadLocal' |
   'pluginOptions___fileName' |
   'pluginOptions___trackingId' |
+  'pluginOptions___feeds' |
+  'pluginOptions___feeds___query' |
+  'pluginOptions___feeds___output' |
+  'pluginOptions___feeds___title' |
+  'pluginOptions___feeds___match' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
@@ -4842,7 +4853,26 @@ export type SitePluginPluginOptions = {
   downloadLocal?: Maybe<Scalars['Boolean']>,
   fileName?: Maybe<Scalars['String']>,
   trackingId?: Maybe<Scalars['String']>,
+  feeds?: Maybe<Array<Maybe<SitePluginPluginOptionsFeeds>>>,
   pathCheck?: Maybe<Scalars['Boolean']>,
+};
+
+export type SitePluginPluginOptionsFeeds = {
+  query?: Maybe<Scalars['String']>,
+  output?: Maybe<Scalars['String']>,
+  title?: Maybe<Scalars['String']>,
+  match?: Maybe<Scalars['String']>,
+};
+
+export type SitePluginPluginOptionsFeedsFilterInput = {
+  query?: Maybe<StringQueryOperatorInput>,
+  output?: Maybe<StringQueryOperatorInput>,
+  title?: Maybe<StringQueryOperatorInput>,
+  match?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsFeedsFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsFeedsFilterInput>,
 };
 
 export type SitePluginPluginOptionsFilterInput = {
@@ -4856,6 +4886,7 @@ export type SitePluginPluginOptionsFilterInput = {
   downloadLocal?: Maybe<BooleanQueryOperatorInput>,
   fileName?: Maybe<StringQueryOperatorInput>,
   trackingId?: Maybe<StringQueryOperatorInput>,
+  feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 
@@ -4900,12 +4931,14 @@ export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>,
   description?: Maybe<Scalars['String']>,
   author?: Maybe<Scalars['String']>,
+  siteUrl?: Maybe<Scalars['String']>,
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
   description?: Maybe<StringQueryOperatorInput>,
   author?: Maybe<StringQueryOperatorInput>,
+  siteUrl?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SiteSortInput = {
