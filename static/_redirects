@@ -1,3 +1,5 @@
+http://subterranean-flower.netlify.com/* https://sbfl.net/:splat 301!
+https://subterranean-flower.netlify.com/* https://sbfl.net/:splat 301!
 /blog/feed/                /blog/feed/index.xml 301
 /blog/feed/index.html      /blog/feed/index.xml 301
 /blog/feed/index.php       /blog/feed/index.xml 301
