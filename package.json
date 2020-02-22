@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Koto Furumiya <kotofurumiya@gmail.com>",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.10.7",
     "date-fns-timezone": "^0.1.4",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
@@ -12,6 +13,7 @@
     "gatsby-plugin-graphql-codegen": "^2.2.2",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sharp": "^2.4.3",
+    "gatsby-plugin-styled-components": "^3.1.19",
     "gatsby-plugin-typescript": "^2.1.27",
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-source-contentful": "^2.1.86",

@@ -1,3 +1,3 @@
-# Subterranean Flower Blog
+# Subterranean Flower
 
-https://sbfl.net/blog/
+https://sbfl.net/
