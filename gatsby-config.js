@@ -4,7 +4,7 @@ const { buildPath } = require('./lib/path_builder');
 module.exports = {
   siteMetadata: {
     title: `Subterranean Flower`,
-    description: `Koto Furumiya`,
+    description: `フロントエンドとかいろいろ`,
     author: `@kfurumiya`,
     siteUrl: 'https://sbfl.net'
   },
