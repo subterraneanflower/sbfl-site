@@ -51,7 +51,6 @@ const StyledSingleArticlePageComponent = styled(SingleArticlePageComponent)`
 export const SingleArticlePage = (props: SingleArticlePageProp) => {
   useEffect(() => {
     window.document.body.classList.add('line-numbers');
-    console.log(window.Prism);
     window.Prism?.highlightAll(true);
   }, [props.pageContext.articleData.pagePath]);
 
