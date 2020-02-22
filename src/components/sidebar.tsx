@@ -18,7 +18,7 @@ const SidebarComponent = ({ className, blogData: articleData }: SidebarComponent
       <h2>RSS</h2>
       <ul className="recent-posts">
         <li>
-          <Link to="/blog/feed/index.xml">RSS Feed</Link>
+          <a href="/blog/feed/index.xml">RSS Feed</a>
         </li>
       </ul>
     </Card>

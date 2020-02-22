@@ -31,7 +31,7 @@ const StyledSidebar = styled(Sidebar)`
 
 const SingleArticlePageComponent = (props: SingleArticlePageComponentProp) => (
   <Layout siteMetadata={{ title: 'Subterranean Flower Blog' }} headerLinkTo="/blog/">
-    <SEO title={props.pageContext.articleData.title} />
+    <SEO title={props.pageContext.articleData.title} includesPrism />
     <div className={props.className}>
       <Article className="page-article" articleData={props.pageContext.articleData} />
       <StyledSidebar blogData={props.pageContext.blogData} />
@@ -51,7 +51,7 @@ const StyledSingleArticlePageComponent = styled(SingleArticlePageComponent)`
 export const SingleArticlePage = (props: SingleArticlePageProp) => {
   useEffect(() => {
     window.document.body.classList.add('line-numbers');
-    window.Prism?.highlightAll();
+    window.Prism?.highlightAll(true);
   }, [props.pageContext]);
 
   return <StyledSingleArticlePageComponent {...props} />;

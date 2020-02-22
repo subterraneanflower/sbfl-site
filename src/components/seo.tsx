@@ -7,9 +7,10 @@ type SeoProps = {
   lang?: string;
   meta?: { name: string; content: string }[];
   description?: string;
+  includesPrism?: boolean;
 };
 
-function SEO({ description, lang = 'ja', meta, title }: SeoProps) {
+function SEO({ description, lang = 'ja', meta, title, includesPrism }: SeoProps) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -78,11 +79,16 @@ function SEO({ description, lang = 'ja', meta, title }: SeoProps) {
           content: metaDescription
         }
       ].concat(meta || [])}
-      script={[
-        {
-          src: '/prism.js'
-        }
-      ]}
+      script={
+        includesPrism
+          ? [
+              {
+                src: '/prism.js',
+                'data-manual': true
+              }
+            ]
+          : undefined
+      }
     />
   );
 }
