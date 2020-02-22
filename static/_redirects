@@ -1,6 +1,6 @@
-/blog/feed/                /feed/index.xml 301
-/blog/feed/index.html      /feed/index.xml 301
-/blog/feed/index.php       /feed/index.xml 301
-/blog/feed/atom/           /feed/index.xml 301
-/blog/feed/atom/index.html /feed/index.xml 301
-/blog/feed/atom/index.php  /feed/index.xml 301
+/blog/feed/                /blog/feed/index.xml 301
+/blog/feed/index.html      /blog/feed/index.xml 301
+/blog/feed/index.php       /blog/feed/index.xml 301
+/blog/feed/atom/           /blog/feed/index.xml 301
+/blog/feed/atom/index.html /blog/feed/index.xml 301
+/blog/feed/atom/index.php  /blog/feed/index.xml 301
