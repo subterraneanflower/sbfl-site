@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>plus-circle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="plus-circle" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M54,46 L54,31 L46,31 L46,46 L31,46 L31,54 L46,54 L46,69 L54,69 L54,54 L69,54 L69,46 L54,46 Z M50,80 C33.4314575,80 20,66.5685425 20,50 C20,33.4314575 33.4314575,20 50,20 C66.5685425,20 80,33.4314575 80,50 C80,66.5685425 66.5685425,80 50,80 Z" id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>

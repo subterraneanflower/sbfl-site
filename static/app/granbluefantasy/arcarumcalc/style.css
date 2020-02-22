@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: rgb(52, 52, 53);
+  --arcarum-red: rgb(226, 99, 57);
+  --arcarum-gold: rgb(255, 213, 126);
+  --sr-silver: rgb(163, 164, 167);
+  --ssr-gold: rgb(233, 169, 86);
+  --fire-red: rgb(221, 90, 90);
+  --water-blue: rgb(80, 120, 250);
+  --earth-brown: rgb(184, 130, 79);
+  --wind-green: rgb(56, 158, 66);
+  --light-yellow: rgb(187, 178, 48);
+  --dark-purple: rgb(105, 53, 105);
+  --twitter-blue: rgb(29, 161, 242);
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  font-family: system-ui, sans-serif;
+}
+
+#app {
+  position: relative;
+  background-color: var(--bg-color);
+}
+
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.page-fade-enter {
+  opacity: 0;
+}
+
+.page-fade-enter-active {
+  transition: opacity 200ms ease-out;
+  opacity: 1;
+}
+
+.page-fade-exit {
+  transition: opacity 200ms ease-in;
+  opacity: 1;
+}
+
+.page-fade-exit-active {
+  opacity: 0;
+}

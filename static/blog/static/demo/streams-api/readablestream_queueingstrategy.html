@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Streams API - ReadableStream(queueingStrategy)</title>
+  </head>
+  <body>
+    <!-- 表示する場所。 -->
+    <output id="output"></output>
+
+    <!-- スクリプト。 -->
+    <script>
+      const output = document.body.querySelector('#output');
+
+      const underlyingSource  = {
+        start(controller) {
+          // 特に何もしない。
+        },
+        pull(controller) {
+          // pull関数はキューに空きがある限り繰り返し実行され続ける。
+          // キューに空き容量がある限り、ランダムな数字を追加する。
+          const randomNum = Math.round(Math.random() * 100);
+          controller.enqueue(randomNum);
+        }
+      }
+
+      // あらかじめ用意されているストラテジを使用する。
+      // キューの上限を5個にする。
+      const queueingStrategy = new CountQueuingStrategy({ highWaterMark: 5 });
+
+      // 上のストラテジを使用するReadableStreamを作成する。
+      const stream = new ReadableStream(underlyingSource, queueingStrategy);
+      const reader = stream.getReader();
+
+      const readChunk = ({done, value}) => {
+        if(done) { return; }
+        output.value = value;
+
+        // 次は1秒後に読み込む。
+        setTimeout(() => reader.read().then(readChunk), 1000);
+      }
+
+      reader.read().then(readChunk);
+    </script>
+  </body>
+</html>

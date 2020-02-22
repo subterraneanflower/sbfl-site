@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "strict": true,
+    "sourceMap": false,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": ["dom", "esnext"]
+  },
+  "include": ["./types/**/*", "./gatsby-node/**/*", "./src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

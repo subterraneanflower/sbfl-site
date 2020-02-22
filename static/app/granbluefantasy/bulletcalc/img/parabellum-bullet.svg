@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>parabellum-bullet</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="parabellum-bullet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M49.9915365,26 C44.5895182,26 42,39.2262074 42,39.2262074 L57.9830729,39.2262074 C57.9830729,39.2262074 55.3935547,26 49.9915365,26 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+        <rect id="Rectangle-2" fill="#FFFFFF" x="42" y="72" width="15.9830729" height="2.9391572"></rect>
+        <rect id="Rectangle" fill="#FFFFFF" x="42" y="41" width="15.9830729" height="29.391572"></rect>
+    </g>
+</svg>

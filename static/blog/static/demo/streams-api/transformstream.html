@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Streams API - Transform Stream</title>
+  </head>
+  <body>
+    <!-- 表示する場所。 -->
+    <output id="output"></output>
+
+    <!-- スクリプト。 -->
+    <script>
+      const output = document.body.querySelector('#output');
+
+      // 毎秒キューにランダムな数字を追加するReadableStream。
+      const underlyingSource = {
+        start(controller) {
+          setInterval(() => {
+            const randomNum = Math.round(Math.random() * 100);
+            controller.enqueue(randomNum);
+          }, 1000)
+        }
+      }
+
+      const readableStream = new ReadableStream(underlyingSource);
+
+      // データを読み出しoutput要素に書き込むWritableStream。
+      const underlyingSink = {
+        write(chunk, controller) {
+          output.value = chunk;
+        }
+      }
+
+      const writableStream = new WritableStream(underlyingSink);
+
+      // 値を100倍にするTransformStream。
+      const transformer = {
+        transform(chunk, controller) {
+          controller.enqueue(chunk * 100);
+        }
+      }
+
+      const transformStream = new TransformStream(transformer);
+
+      // ReadableStreamとTransformStreamとWritableStreamを接続する。
+      readableStream
+        .pipeThrough(transformStream)
+        .pipeTo(writableStream);
+    </script>
+  </body>
+</html>

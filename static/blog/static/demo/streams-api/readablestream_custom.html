@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Streams API - ReadableStream(Custom)</title>
+  </head>
+  <body>
+    <!-- 表示する場所。 -->
+    <output id="output"></output>
+
+    <!-- スクリプト。 -->
+    <script>
+      const output = document.body.querySelector('#output');
+
+      let timerId = null;
+
+      // ReadableStreamのソース（読み込み元）。
+      // 最低限start関数が必要。
+      const underlyingSource  = {
+        start(controller) {
+          // 1秒ごとにランダムな数字を出力する。
+          timerId = setInterval(() => {
+            // 0から100までのランダムな数字を生成。
+            const randomNum = Math.round(Math.random() * 100);
+
+            // キューに追加する。
+            controller.enqueue(randomNum);
+          }, 1000);
+        },
+
+        // ストリームをキャンセルしたときなどに呼び出される関数。
+        cancel(reason) {
+          // タイマーを消す。
+          clearInterval(timerId);
+        }
+      }
+
+      // さっきのunderlyingSourceを使ってReadableStreamを作る。
+      const stream = new ReadableStream(underlyingSource);
+
+      // 作成したReadableStreamからリーダーを取得する。
+      // リーダーを取得するとストリームは自動的にロックされる。
+      const reader = stream.getReader();
+
+      // ストリームから順次読み出す関数。
+      const readChunk = ({done, value}) => {
+        if(done) { return; }
+        output.value = value;
+
+        // 次の値を読む。
+        reader.read().then(readChunk);
+      }
+
+      // 値を読み始める。
+      reader.read().then(readChunk);
+    </script>
+  </body>
+</html>

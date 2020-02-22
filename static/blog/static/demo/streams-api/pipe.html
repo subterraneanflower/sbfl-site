@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Streams API - Pipe Two Streams</title>
+  </head>
+  <body>
+    <!-- 表示する場所。 -->
+    <output id="output"></output>
+
+    <!-- スクリプト。 -->
+    <script>
+      const output = document.body.querySelector('#output');
+
+      // 毎秒キューにランダムな数字を追加するReadableStream。
+      const underlyingSource = {
+        start(controller) {
+          setInterval(() => {
+            const randomNum = Math.round(Math.random() * 100);
+            controller.enqueue(randomNum);
+          }, 1000)
+        }
+      }
+
+      const readableStream = new ReadableStream(underlyingSource);
+
+      // データを読み出しoutput要素に書き込むWritableStream。
+      const underlyingSink = {
+        write(chunk, controller) {
+          output.value = chunk;
+        }
+      }
+
+      const writableStream = new WritableStream(underlyingSink);
+
+      // ReadableStreamとWritableStreamを接続する。
+      readableStream.pipeTo(writableStream);
+    </script>
+  </body>
+</html>

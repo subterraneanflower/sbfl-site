@@ -1,0 +1,391 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  background-color: rgb(60, 61, 69);
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  flex: 1;
+  max-width: 100%;
+}
+
+a {
+  color: rgb(240, 240, 240);
+}
+
+a:visited {
+  color: rgb(240, 240, 240);
+}
+
+.preferences-dialog {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.preferences-dialog[data-visible] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preferences-dialog-content {
+  background-color: slategray;
+  width: 600px;
+  max-width: 95%;
+  padding: 1em;
+}
+
+.close-pref-button,
+.install-button {
+  display: block;
+  border: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  color: white;
+  width: 100%;
+  padding: 0.2em 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.close-pref-button {
+  font-size: 1.2em;
+  background-color: rgb(75, 176, 62);
+}
+
+.close-pref-button:focus,
+.install-button:focus {
+  outline: none;
+}
+
+.install-button {
+  background-color: rgb(83, 95, 209);
+  font-size: 1em;
+  margin: 1em 0;
+}
+
+.install-button[disabled] {
+  display: none;
+}
+
+.canvas-container {
+  text-align: center;
+}
+
+.timer-canvas {
+  max-height: 50vh;
+  object-fit: contain;
+}
+
+.timer-display {
+  text-align: center;
+}
+
+.timer-output {
+  font-size: 3em;
+  color: rgb(240, 240, 240);
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0;
+}
+
+.paralysis-button {
+  font-size: 1.2em;
+  border: none;
+  border-radius: 3px;
+  -webkit-appearance: none;
+
+  background-color: rgb(226, 185, 18);
+  color: rgb(230, 230, 230);
+
+  padding: 1em 0;
+  width: 30%;
+
+  cursor: pointer;
+}
+
+.paralysis-button:focus {
+  outline: none;
+}
+
+.paralysis-button:hover {
+  background-color: rgb(255, 247, 107);
+}
+
+.paralysis-button[disabled] {
+  background-color: rgb(142, 139, 120);
+  cursor: auto;
+}
+
+.preferences-button-container {
+  padding: 0.8em 0;
+  flex-direction: column;
+}
+
+.button-timing {
+  position: relative;
+  display: flex;
+  color: white;
+  align-items: stretch;
+  width: 100%;
+}
+
+.button-timing::after {
+  content: "▼";
+  position: absolute;
+  right: 0.4em;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 0.8em;
+  color: rgb(203, 146, 74);
+  height: min-content;
+  pointer-events: none;
+}
+
+.select-part {
+  padding: 0.2em 1em;
+}
+
+.select-label {
+  display: block;
+  background-color: rgb(203, 146, 74);
+  border-radius: 3px 0 0 3px;
+}
+
+.button-timing-select {
+  flex: 1;
+  font-size: 0.8em;
+  background-color: white;
+  padding: 0.2em 0;
+  padding-left: 0.5em;
+}
+
+.get-share-url {
+  display: flex;
+  margin: 0.8em 0;
+}
+
+.share-url-part {
+  padding: 0.2em 1em;
+}
+
+.share-url-label {
+  background-color: rgb(203, 146, 74);
+  border-radius: 3px 0 0 3px;
+  color: white;
+}
+
+.share-url-button {
+  border: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: rgb(75, 106, 255);
+  color: rgb(255, 255, 255);
+}
+
+.share-url-button:focus {
+  outline: none;
+}
+
+.share-url-button[disabled] {
+  background-color: gray;
+}
+
+.share-url-input {
+  flex: 1;
+  border-radius: 0 3px 3px 0;
+  border: none;
+}
+
+.system-select {
+  font-size: 1em;
+  border: none;
+  border-radius: 0 3px 3px 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.system-select:focus {
+  outline: none;
+}
+
+.system-button-container {
+  flex-direction: column;
+}
+
+.system-button {
+  font-size: 1.2em;
+  border: none;
+  border-radius: 3px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  background-color: rgb(75, 106, 255);
+  color: rgb(255, 255, 255);
+
+  width: 100%;
+  padding: 0.5em 1em;
+
+  cursor: pointer;
+}
+
+.system-button:focus {
+  outline: none;
+}
+
+.system-button:hover {
+  background-color: rgb(104, 163, 255);
+}
+
+.pref-button {
+  background-color: rgb(71, 181, 67);
+}
+
+.pref-button:hover {
+  background-color: rgb(88, 224, 83);
+}
+
+.app-footer {
+  padding: 1em 0;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.client-mode .control-container {
+  visibility: hidden;
+}
+
+@media screen and (orientation: portrait) {
+  html,
+  body {
+    height: 100%;
+  }
+
+  main {
+    width: 90%;
+  }
+
+  .display-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .timer-canvas {
+    max-width: 40vmin;
+  }
+
+  .control-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+  }
+
+  .button-container {
+    flex: 1;
+  }
+
+  .paralysis-button {
+    width: 30%;
+    font-size: 0.8em;
+  }
+
+  .preferences-button-container {
+    font-size: 0.8em;
+  }
+
+  .system-button-container {
+    flex: 0.5;
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  body {
+    max-height: 100%;
+  }
+
+  main {
+    flex: 1;
+    flex-direction: row;
+    max-width: none;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    width: 100%;
+    height: 100%;
+  }
+
+  .display-container {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .timer-canvas {
+    width: 70vh;
+  }
+
+  .control-container {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1em;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .paralysis-button {
+    font-size: 0.8em;
+  }
+
+  .preferences-button-container {
+    font-size: 0.8em;
+    flex-direction: column;
+  }
+
+  .system-button-container {
+    font-size: 0.8em;
+  }
+}

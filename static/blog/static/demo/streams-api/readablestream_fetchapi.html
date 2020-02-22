@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Streams API - ReadableStream(Fetch API)</title>
+  </head>
+  <body>
+    <output id="output"></output>
+    <script>
+      const output = document.body.querySelector('#output');
+
+      let veryLongText = ''; // 細切れの値をここに結合していく。
+      const decoder = new TextDecoder();
+
+      fetch('verylongdata.txt')
+        .then((response) => response.body.getReader()) // ReadableStreamを取得する。
+        .then((reader) => {
+          // ReadableStream.read()はPromiseを返す。
+          // Promiseは{ done, value }として解決される。
+          // データを読み込んだとき：doneはfalse, valueは値。
+          // データを読み込み終わったとき：doneはtrue, valueはundefined。
+          function readChunk({done, value}) {
+            if(done) {
+              output.value = veryLongText;
+              return;
+            }
+
+            veryLongText += decoder.decode(value);
+
+            // 次の値を読みにいく。
+            reader.read().then(readChunk);
+          }
+
+          // 最初の値を読み込む。
+          reader.read().then(readChunk);
+        });
+    </script>
+  </body>
+</html>

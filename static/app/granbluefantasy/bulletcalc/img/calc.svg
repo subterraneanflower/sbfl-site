@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>calc</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="calc" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M24,15 L77,15 L77,89 L24,89 L24,15 Z M30,23 L30,34 L71,34 L71,23 L30,23 Z M30,40 L30,51 L41,51 L41,40 L30,40 Z M45,40 L45,51 L56,51 L56,40 L45,40 Z M60,40 L60,51 L71,51 L71,40 L60,40 Z M30,56 L30,67 L41,67 L41,56 L30,56 Z M45,56 L45,67 L56,67 L56,56 L45,56 Z M30,72 L30,83 L41,83 L41,72 L30,72 Z M45,72 L45,83 L56,83 L56,72 L45,72 Z M60,56 L60,83 L71,83 L71,56 L60,56 Z" id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>

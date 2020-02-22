@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>aetherial-bullet</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="aetherial-bullet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M50.1582031,26 C43.2915888,26 40,39.2262074 40,39.2262074 L60.3164062,39.2262074 C60.3164062,39.2262074 57.0248174,26 50.1582031,26 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+        <rect id="Rectangle-2" fill="#FFFFFF" x="40" y="72" width="20.3164062" height="2.9391572"></rect>
+        <path d="M40,41 L60.3164062,41 L60.3164062,70.391572 L40,70.391572 L40,41 Z M42.25,45.5 L42.25,66.5 L44.25,66.5 L44.25,45.5 L42.25,45.5 Z M46.25,45.5 L46.25,66.5 L48.25,66.5 L48.25,45.5 L46.25,45.5 Z M50.0009988,59.5078885 L52.9478261,62.9794968 L53.0644439,66.7457924 L55.0634858,66.6838951 L54.9252208,62.218479 L51.9990012,58.7711483 L51.9628869,45.5006966 L49.9628943,45.5061394 L50.0009988,59.5078885 Z M54.0009988,59.5078885 L56.9478261,62.9794968 L57.0644439,66.7457924 L59.0634858,66.6838951 L58.9252208,62.218479 L55.9990012,58.7711483 L55.9628869,45.5006966 L53.9628943,45.5061394 L54.0009988,59.5078885 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+    </g>
+</svg>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Streams API - ReadableStream(Tee)</title>
+  </head>
+  <body>
+    <!-- 表示する場所。 -->
+    <output id="output"></output>
+
+    <!-- スクリプト。 -->
+    <script>
+      const output = document.body.querySelector('#output');
+
+      const underlyingSource  = {
+        start(controller) {
+          setInterval(() => {
+            const randomNum = Math.round(Math.random() * 100);
+            controller.enqueue(randomNum);
+          }, 1000);
+        },
+      }
+
+      const stream = new ReadableStream(underlyingSource);
+
+      // teeメソッドでストリームを2つに分割する。
+      const [stream1, stream2] = stream.tee();
+      const reader1 = stream1.getReader();
+      const reader2 = stream2.getReader();
+
+      // 2つのストリームに対してそれぞれ別の出力をする。
+      const readChunkToOutputElement = ({done, value}) => {
+        if(done) { return; }
+        output.value = value;
+        reader1.read().then(readChunkToOutputElement);
+      }
+
+      const readChunkToConsole = ({done, value}) => {
+        if(done) { return; }
+        console.log(value);
+        reader2.read().then(readChunkToConsole)
+      }
+
+      reader1.read().then(readChunkToOutputElement);
+      reader2.read().then(readChunkToConsole);
+    </script>
+  </body>
+</html>

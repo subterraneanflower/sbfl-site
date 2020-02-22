@@ -1,0 +1,46 @@
+{
+  "name": "sbfl-net",
+  "private": true,
+  "description": "古都ことのウェブサイト",
+  "version": "0.1.0",
+  "author": "Koto Furumiya <kotofurumiya@gmail.com>",
+  "dependencies": {
+    "date-fns-timezone": "^0.1.4",
+    "gatsby": "^2.19.7",
+    "gatsby-image": "^2.2.39",
+    "gatsby-plugin-google-analytics": "^2.1.35",
+    "gatsby-plugin-graphql-codegen": "^2.2.2",
+    "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-sharp": "^2.4.3",
+    "gatsby-plugin-typescript": "^2.1.27",
+    "gatsby-remark-external-links": "0.0.4",
+    "gatsby-source-contentful": "^2.1.86",
+    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-transformer-remark": "^2.6.53",
+    "gatsby-transformer-sharp": "^2.3.13",
+    "jsdom": "^16.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^5.0.1",
+    "typescript": "^3.7.5"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.1",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-helmet": "^5.0.15",
+    "@types/styled-components": "^4.4.3",
+    "prettier": "^1.19.1"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  }
+}

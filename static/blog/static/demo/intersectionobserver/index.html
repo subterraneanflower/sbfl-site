@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name=”robots” content=”noindex”>
+  <title>IntersectionObserverデモ</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .top {
+      font-size: 3em;
+      background-color: rgb(230,230,230);
+      height: 100vh;
+      text-align: center;
+    }
+
+    .target {
+      font-size: 3em;
+      height: 100vh;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="top">scroll↓</div>
+  <div class="target"></div>
+
+  <script>
+    const target = document.querySelector('.target');
+
+    // オプションを指定する。
+    const options = {
+      threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+    }
+
+    // オプションとともにIntersectionObserverオブジェクトを作成する。
+    const observer = new IntersectionObserver((entries) => {
+      const e = entries[0];
+      target.innerText = `Ratio: ${e.intersectionRatio}`;
+    }, options);
+
+    // 監視したい要素をobserveする。
+    observer.observe(target);
+  </script>
+</body>
+</html>

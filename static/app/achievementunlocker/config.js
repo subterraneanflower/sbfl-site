@@ -1,0 +1,1 @@
+const config={twitter:{oauth_callback:"https://sbfl.net/app/achievementunlocker/"},apigateway:{apiKey:"wps4jcPy5D2G4P2HQzF9u5s1IKghJzM28fKddJch",token:"https://f6tumn76c3.execute-api.ap-northeast-1.amazonaws.com/prod/auth/twitter",post:"https://f6tumn76c3.execute-api.ap-northeast-1.amazonaws.com/prod/post"}};

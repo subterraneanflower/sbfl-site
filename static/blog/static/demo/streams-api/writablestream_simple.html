@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Streams API - WritableStream(Simple)</title>
+  </head>
+  <body>
+    <!-- 表示する場所。 -->
+    <output id="output"></output>
+
+    <!-- スクリプト。 -->
+    <script>
+      const output = document.body.querySelector('#output');
+
+      // WritableStreamのシンク（書き出し先）。
+      // 実装が必須な関数は無し。つまり空オブジェクトでもOK。
+      const underlyingSink = {
+        write(chunk, controller) {
+          output.value = chunk;
+        }
+      }
+
+      // underlyingSinkを使ってWritableStreamを作る。
+      const stream = new WritableStream(underlyingSink);
+
+      // ライターを取得し、ロックする。
+      const writer = stream.getWriter();
+
+      // ライターの準備をreadyで待つ。readyはPromise。
+      // 準備ができていたらライターにデータをwriteする。writeもPromiseを返す。
+      // 全部のデータを書き込み終わったらcloseする。closeもPromiseを返す。
+      writer.ready
+        .then(() => writer.write('Hello!'))
+        .then(() => console.log('write done.'))
+        .then(() => writer.close())
+        .then(() => console.log('close writer.'));
+    </script>
+  </body>
+</html>

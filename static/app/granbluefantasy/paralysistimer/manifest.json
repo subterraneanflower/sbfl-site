@@ -1,0 +1,21 @@
+{
+  "short_name": "麻痺タイマー",
+  "name": "グラブル麻痺タイマー",
+  "icons": [
+    {
+      "src": "img/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://sbfl.net/app/granbluefantasy/paralysistimer/",
+  "background_color": "#3C3D45",
+  "display": "standalone",
+  "scope": "https://sbfl.net/app/granbluefantasy/paralysistimer/",
+  "theme_color": "#3C3D45"
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Audio Spectrum</title>
+  <script src="main.js" defer></script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #display {
+      display: block;
+      margin: 1em 0;
+    }
+
+    #open-file {
+      background-color: rgb(112, 125, 198);
+      color: white;
+      text-align: center;
+      padding: 0.5em 1em;
+      cursor: pointer;
+    }
+
+    #file-input {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="display"></canvas>
+  <label id="open-file">
+    音楽ファイルを開く
+    <input id="file-input" type="file" accept="audio/*">
+  </label>
+</body>
+</html>

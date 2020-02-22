@@ -1,0 +1,21 @@
+{
+  "short_name": "バレット計算機",
+  "name": "バレット計算機",
+  "icons": [
+    {
+      "src": "img/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://sbfl.net/app/granbluefantasy/bulletcalc/",
+  "background_color": "#4752AA",
+  "display": "standalone",
+  "scope": "https://sbfl.net/app/granbluefantasy/bulletcalc/",
+  "theme_color": "#4752AA"
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <meta name="description" content="グラブルの麻痺タイマーです。麻痺延長対応">
+  <title>グラブル麻痺タイマー</title>
+  <link rel="shortcut icon" href="./favicon.png">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <script src="config.js" defer></script>
+  <script src="modules.js" defer></script>
+  <script src="main.js" defer></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43559872-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-43559872-1');
+  </script>
+</head>
+<body>
+  <div class="preferences-dialog">
+    <div class="preferences-dialog-content">
+      <div class="button-container preferences-button-container">
+        <label class="button-timing">
+          <span class="select-part select-label">ボタン押下</span>
+          <select class="select-part button-timing-select system-select">
+            <option value="immediate" selected>アビリティ発動直後</option>
+            <option value="clincher">クリンチャー命中時</option>
+          </select>
+        </label>
+
+        <label class="get-share-url">
+          <span class="share-url-part share-url-label">共有URL</span>
+          <button class="share-url-part share-url-button">取得</button>
+          <input class="share-url-part share-url-input" value="取得ボタンを押してください" readonly>
+        </label>
+      </div>
+
+      <div class="install-button-container">
+        <button class="install-button" disabled>ホーム画面にインストール</button>
+      </div>
+
+      <div class="close-pref-button-container">
+        <button class="close-pref-button">戻る</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="display-container">
+      <div class="canvas-container">
+        <canvas class="timer-canvas"></canvas>
+      </div>
+
+      <div class="timer-display">
+        <output class="timer-output"></output>
+      </div>
+    </div>
+
+    <div class="control-container">
+      <div class="button-container">
+        <button class="paralysis-60-button paralysis-button">麻痺60</button>
+        <button class="extend-button paralysis-button">麻痺延長</button>
+        <button class="unextend-button paralysis-button">延長失敗</button>
+      </div>
+
+      <div class="button-container system-button-container">
+        <button class="system-button reset-button">タイマーリセット</button>
+      </div>
+
+      <div class="button-container system-button-container">
+        <button class="system-button pref-button">設定</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <div><a target="_blank" href="https://feedback.userreport.com/35a6b801-a72c-4743-8d96-5469eacd9d86/">要望＆バグ報告はこちらから</a></div>
+    <div><a target="_blank" href="https://github.com/kotofurumiya/gbf-paralysis-timer">View Source on GitHub</a></div>
+  </footer>
+</body>
+</html>
