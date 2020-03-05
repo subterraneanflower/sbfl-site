@@ -48,9 +48,10 @@ const StyledSingleArticlePageComponent = styled(SingleArticlePageComponent)`
 
 export const SingleArticlePage = (props: SingleArticlePageProp) => {
   useEffect(() => {
+    const prismPath = '/prism.js';
     window.document.body.classList.add('line-numbers');
     // @ts-ignore
-    import(/* webpackIgnore: true */ '/prism.js').then(({default: Prism}) => {
+    import(/* webpackIgnore: true */ prismPath).then(({default: Prism}) => {
       Prism.highlightAll(true);
     });
   }, [props.pageContext.articleData.pagePath]);
