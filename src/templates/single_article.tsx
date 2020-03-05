@@ -7,8 +7,6 @@ import styled from 'styled-components';
 import { Sidebar } from '../components/sidebar';
 import { ArticleData, BlogData } from '../types/blog';
 
-declare const window: Window & typeof globalThis & { Prism: { highlightAll: Function } };
-
 type SingleArticlePageProp = {
   pageContext: {
     blogData: BlogData;
@@ -51,7 +49,10 @@ const StyledSingleArticlePageComponent = styled(SingleArticlePageComponent)`
 export const SingleArticlePage = (props: SingleArticlePageProp) => {
   useEffect(() => {
     window.document.body.classList.add('line-numbers');
-    window.Prism?.highlightAll(true);
+    // @ts-ignore
+    import(/* webpackIgnore: true */ '/prism.js').then(({default: Prism}) => {
+      Prism.highlightAll(true);
+    });
   }, [props.pageContext.articleData.pagePath]);
 
   return <StyledSingleArticlePageComponent {...props} />;
