@@ -76,6 +76,10 @@ const StyledArticleComponent = styled(ArticleComponent)`
     margin: 1em 0;
     word-break: break-word;
 
+    & > code {
+      color: rgb(212, 149, 0);
+    }
+
     & img {
       max-width: 100%;
       height: auto;
