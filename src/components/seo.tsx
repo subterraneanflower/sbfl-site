@@ -62,6 +62,10 @@ function SEO({ description, lang = 'ja', meta, title }: SeoProps) {
           content: `website`
         },
         {
+          property: `og:image`,
+          content: `https://sbfl.net/blog/static/assets/ogp.png`
+        },
+        {
           name: `twitter:card`,
           content: `summary`
         },
