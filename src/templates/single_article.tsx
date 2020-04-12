@@ -6,6 +6,7 @@ import { Article } from '../components/article';
 import styled from 'styled-components';
 import { Sidebar } from '../components/sidebar';
 import { ArticleData, BlogData } from '../types/blog';
+import { ShareButton } from '../components/share_button';
 
 type SingleArticlePageProp = {
   pageContext: {
@@ -33,6 +34,7 @@ const SingleArticlePageComponent = (props: SingleArticlePageComponentProp) => (
     <div className={props.className}>
       <Article className="page-article" articleData={props.pageContext.articleData} />
       <StyledSidebar blogData={props.pageContext.blogData} />
+      {'share' in navigator ? <ShareButton/> : null}
     </div>
   </Layout>
 );
@@ -40,6 +42,7 @@ const SingleArticlePageComponent = (props: SingleArticlePageComponentProp) => (
 const StyledSingleArticlePageComponent = styled(SingleArticlePageComponent)`
   display: flex;
   justify-content: center;
+  padding-bottom: 5em;
 
   & .page-article {
     flex: 1;

@@ -3635,12 +3635,12 @@ export type Query = {
   allMarkdownRemark: MarkdownRemarkConnection,
   imageSharp?: Maybe<ImageSharp>,
   allImageSharp: ImageSharpConnection,
+  contentfulBlogPostContentTextNode?: Maybe<ContentfulBlogPostContentTextNode>,
+  allContentfulBlogPostContentTextNode: ContentfulBlogPostContentTextNodeConnection,
   contentfulAsset?: Maybe<ContentfulAsset>,
   allContentfulAsset: ContentfulAssetConnection,
   contentfulAuthor?: Maybe<ContentfulAuthor>,
   allContentfulAuthor: ContentfulAuthorConnection,
-  contentfulBlogPostContentTextNode?: Maybe<ContentfulBlogPostContentTextNode>,
-  allContentfulBlogPostContentTextNode: ContentfulBlogPostContentTextNodeConnection,
   contentfulBlogPost?: Maybe<ContentfulBlogPost>,
   allContentfulBlogPost: ContentfulBlogPostConnection,
   contentfulContentType?: Maybe<ContentfulContentType>,
@@ -3803,6 +3803,24 @@ export type QueryAllImageSharpArgs = {
 };
 
 
+export type QueryContentfulBlogPostContentTextNodeArgs = {
+  id?: Maybe<StringQueryOperatorInput>,
+  parent?: Maybe<NodeFilterInput>,
+  children?: Maybe<NodeFilterListInput>,
+  internal?: Maybe<InternalFilterInput>,
+  content?: Maybe<StringQueryOperatorInput>,
+  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>
+};
+
+
+export type QueryAllContentfulBlogPostContentTextNodeArgs = {
+  filter?: Maybe<ContentfulBlogPostContentTextNodeFilterInput>,
+  sort?: Maybe<ContentfulBlogPostContentTextNodeSortInput>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>
+};
+
+
 export type QueryContentfulAssetArgs = {
   id?: Maybe<StringQueryOperatorInput>,
   parent?: Maybe<NodeFilterInput>,
@@ -3854,24 +3872,6 @@ export type QueryContentfulAuthorArgs = {
 export type QueryAllContentfulAuthorArgs = {
   filter?: Maybe<ContentfulAuthorFilterInput>,
   sort?: Maybe<ContentfulAuthorSortInput>,
-  skip?: Maybe<Scalars['Int']>,
-  limit?: Maybe<Scalars['Int']>
-};
-
-
-export type QueryContentfulBlogPostContentTextNodeArgs = {
-  id?: Maybe<StringQueryOperatorInput>,
-  parent?: Maybe<NodeFilterInput>,
-  children?: Maybe<NodeFilterListInput>,
-  internal?: Maybe<InternalFilterInput>,
-  content?: Maybe<StringQueryOperatorInput>,
-  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>
-};
-
-
-export type QueryAllContentfulBlogPostContentTextNodeArgs = {
-  filter?: Maybe<ContentfulBlogPostContentTextNodeFilterInput>,
-  sort?: Maybe<ContentfulBlogPostContentTextNodeSortInput>,
   skip?: Maybe<Scalars['Int']>,
   limit?: Maybe<Scalars['Int']>
 };
@@ -4523,9 +4523,6 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___rel' |
   'pluginCreator___pluginOptions___name' |
   'pluginCreator___pluginOptions___path' |
-  'pluginCreator___pluginOptions___spaceId' |
-  'pluginCreator___pluginOptions___accessToken' |
-  'pluginCreator___pluginOptions___downloadLocal' |
   'pluginCreator___pluginOptions___fileName' |
   'pluginCreator___pluginOptions___trackingId' |
   'pluginCreator___pluginOptions___feeds' |
@@ -4534,6 +4531,10 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___feeds___title' |
   'pluginCreator___pluginOptions___feeds___match' |
   'pluginCreator___pluginOptions___pathCheck' |
+  'pluginCreator___pluginOptions___spaceId' |
+  'pluginCreator___pluginOptions___accessToken' |
+  'pluginCreator___pluginOptions___host' |
+  'pluginCreator___pluginOptions___downloadLocal' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
   'pluginCreator___ssrAPIs' |
@@ -4731,9 +4732,6 @@ export type SitePluginFieldsEnum =
   'pluginOptions___rel' |
   'pluginOptions___name' |
   'pluginOptions___path' |
-  'pluginOptions___spaceId' |
-  'pluginOptions___accessToken' |
-  'pluginOptions___downloadLocal' |
   'pluginOptions___fileName' |
   'pluginOptions___trackingId' |
   'pluginOptions___feeds' |
@@ -4742,6 +4740,10 @@ export type SitePluginFieldsEnum =
   'pluginOptions___feeds___title' |
   'pluginOptions___feeds___match' |
   'pluginOptions___pathCheck' |
+  'pluginOptions___spaceId' |
+  'pluginOptions___accessToken' |
+  'pluginOptions___host' |
+  'pluginOptions___downloadLocal' |
   'nodeAPIs' |
   'browserAPIs' |
   'ssrAPIs' |
@@ -4859,13 +4861,14 @@ export type SitePluginPluginOptions = {
   rel?: Maybe<Scalars['String']>,
   name?: Maybe<Scalars['String']>,
   path?: Maybe<Scalars['String']>,
-  spaceId?: Maybe<Scalars['String']>,
-  accessToken?: Maybe<Scalars['String']>,
-  downloadLocal?: Maybe<Scalars['Boolean']>,
   fileName?: Maybe<Scalars['String']>,
   trackingId?: Maybe<Scalars['String']>,
   feeds?: Maybe<Array<Maybe<SitePluginPluginOptionsFeeds>>>,
   pathCheck?: Maybe<Scalars['Boolean']>,
+  spaceId?: Maybe<Scalars['String']>,
+  accessToken?: Maybe<Scalars['String']>,
+  host?: Maybe<Scalars['String']>,
+  downloadLocal?: Maybe<Scalars['Boolean']>,
 };
 
 export type SitePluginPluginOptionsFeeds = {
@@ -4892,13 +4895,14 @@ export type SitePluginPluginOptionsFilterInput = {
   rel?: Maybe<StringQueryOperatorInput>,
   name?: Maybe<StringQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
-  spaceId?: Maybe<StringQueryOperatorInput>,
-  accessToken?: Maybe<StringQueryOperatorInput>,
-  downloadLocal?: Maybe<BooleanQueryOperatorInput>,
   fileName?: Maybe<StringQueryOperatorInput>,
   trackingId?: Maybe<StringQueryOperatorInput>,
   feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
+  spaceId?: Maybe<StringQueryOperatorInput>,
+  accessToken?: Maybe<StringQueryOperatorInput>,
+  host?: Maybe<StringQueryOperatorInput>,
+  downloadLocal?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsPlugins = {
