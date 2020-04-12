@@ -3933,8 +3933,6 @@ export type QuerySiteArgs = {
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
-  port?: Maybe<IntQueryOperatorInput>,
-  host?: Maybe<StringQueryOperatorInput>,
   polyfill?: Maybe<BooleanQueryOperatorInput>,
   pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>
@@ -4004,8 +4002,6 @@ export type Site = Node & {
   children: Array<Node>,
   internal: Internal,
   siteMetadata?: Maybe<SiteSiteMetadata>,
-  port?: Maybe<Scalars['Int']>,
-  host?: Maybe<Scalars['String']>,
   polyfill?: Maybe<Scalars['Boolean']>,
   pathPrefix?: Maybe<Scalars['String']>,
   buildTime?: Maybe<Scalars['Date']>,
@@ -4137,8 +4133,6 @@ export type SiteFieldsEnum =
   'siteMetadata___description' |
   'siteMetadata___author' |
   'siteMetadata___siteUrl' |
-  'port' |
-  'host' |
   'polyfill' |
   'pathPrefix' |
   'buildTime';
@@ -4149,8 +4143,6 @@ export type SiteFilterInput = {
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
-  port?: Maybe<IntQueryOperatorInput>,
-  host?: Maybe<StringQueryOperatorInput>,
   polyfill?: Maybe<BooleanQueryOperatorInput>,
   pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>,
@@ -4533,7 +4525,6 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___pluginOptions___spaceId' |
   'pluginCreator___pluginOptions___accessToken' |
-  'pluginCreator___pluginOptions___host' |
   'pluginCreator___pluginOptions___downloadLocal' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
@@ -4742,7 +4733,6 @@ export type SitePluginFieldsEnum =
   'pluginOptions___pathCheck' |
   'pluginOptions___spaceId' |
   'pluginOptions___accessToken' |
-  'pluginOptions___host' |
   'pluginOptions___downloadLocal' |
   'nodeAPIs' |
   'browserAPIs' |
@@ -4867,7 +4857,6 @@ export type SitePluginPluginOptions = {
   pathCheck?: Maybe<Scalars['Boolean']>,
   spaceId?: Maybe<Scalars['String']>,
   accessToken?: Maybe<Scalars['String']>,
-  host?: Maybe<Scalars['String']>,
   downloadLocal?: Maybe<Scalars['Boolean']>,
 };
 
@@ -4901,7 +4890,6 @@ export type SitePluginPluginOptionsFilterInput = {
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
   spaceId?: Maybe<StringQueryOperatorInput>,
   accessToken?: Maybe<StringQueryOperatorInput>,
-  host?: Maybe<StringQueryOperatorInput>,
   downloadLocal?: Maybe<BooleanQueryOperatorInput>,
 };
 

@@ -34,7 +34,7 @@ const SingleArticlePageComponent = (props: SingleArticlePageComponentProp) => (
     <div className={props.className}>
       <Article className="page-article" articleData={props.pageContext.articleData} />
       <StyledSidebar blogData={props.pageContext.blogData} />
-      {'share' in navigator ? <ShareButton/> : null}
+      <ShareButton/>
     </div>
   </Layout>
 );

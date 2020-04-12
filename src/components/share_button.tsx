@@ -12,6 +12,8 @@ const ShareButtonComponent = ({ className, ...props }: ShareButtonComponentProps
 );
 
 const StyledShareButtonComponent = styled(ShareButtonComponent)`
+  display: ${(p) => (typeof window !== 'undefined' && 'share' in window.navigator) ? 'block' : 'none'};
+
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -34,9 +36,7 @@ export const ShareButton = (props: ShareButtonProps) => {
     const title = document.title;
     const url = location.href;
 
-    console.log(url, title);
-
-    (navigator as any).share?.({title, url});
+    (window.navigator as any).share?.({title, url});
   }, []);
 
   return <StyledShareButtonComponent {...props} onClick={onClick} />;
