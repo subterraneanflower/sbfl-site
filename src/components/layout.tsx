@@ -31,7 +31,7 @@ const StyledLayoutComponent = styled(LayoutComponent)`
   padding: 2em var(--page-padding-horizontal);
 `;
 
-export const Layout = (props: LayoutProps) => {
+export const Layout = ({ siteMetadata, ...props }: LayoutProps) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

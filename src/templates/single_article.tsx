@@ -34,7 +34,7 @@ const SingleArticlePageComponent = (props: SingleArticlePageComponentProp) => (
     <div className={props.className}>
       <Article className="page-article" articleData={props.pageContext.articleData} />
       <StyledSidebar blogData={props.pageContext.blogData} />
-      <ShareButton/>
+      <ShareButton />
     </div>
   </Layout>
 );
@@ -54,7 +54,7 @@ export const SingleArticlePage = (props: SingleArticlePageProp) => {
     const prismPath = '/prism.js';
     window.document.body.classList.add('line-numbers');
     // @ts-ignore
-    import(/* webpackIgnore: true */ prismPath).then(({default: Prism}) => {
+    import(/* webpackIgnore: true */ prismPath).then(({ default: Prism }) => {
       Prism.highlightAll(true);
     });
   }, [props.pageContext.articleData.pagePath]);

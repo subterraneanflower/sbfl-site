@@ -12,7 +12,7 @@ const ShareButtonComponent = ({ className, ...props }: ShareButtonComponentProps
 );
 
 const StyledShareButtonComponent = styled(ShareButtonComponent)`
-  display: ${(p) => (typeof window !== 'undefined' && 'share' in window.navigator) ? 'block' : 'none'};
+  display: ${(p) => (typeof window !== 'undefined' && 'share' in window.navigator ? 'block' : 'none')};
 
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -20,7 +20,7 @@ const StyledShareButtonComponent = styled(ShareButtonComponent)`
   position: fixed;
   bottom: 2em;
   right: 2em;
-  background: var(--brand-color) url("/blog/static/assets/share.png") no-repeat;
+  background: var(--brand-color) url('/blog/static/assets/share.png') no-repeat;
   background-position: center center;
   background-size: contain;
   border: none;
@@ -36,7 +36,7 @@ export const ShareButton = (props: ShareButtonProps) => {
     const title = document.title;
     const url = location.href;
 
-    (window.navigator as any).share?.({title, url});
+    (window.navigator as any).share?.({ title, url });
   }, []);
 
   return <StyledShareButtonComponent {...props} onClick={onClick} />;

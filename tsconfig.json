@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "esnext",
     "moduleResolution": "node",
-    "target": "esnext",
+    "target": "es2018",
     "strict": true,
     "sourceMap": false,
     "noImplicitAny": true,
