@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 
 import { Layout } from '../components/layout';
 import SEO from '../components/seo';
@@ -6,7 +6,10 @@ import { Article } from '../components/article';
 import styled from 'styled-components';
 import { Sidebar } from '../components/sidebar';
 import { ArticleData, BlogData } from '../types/blog';
-import { ShareButton } from '../components/share_button';
+
+const LazyShareButton = React.lazy(() =>
+  import('../components/share_button').then((module) => ({ default: module.ShareButton }))
+);
 
 type SingleArticlePageProp = {
   pageContext: {
@@ -34,7 +37,9 @@ const SingleArticlePageComponent = (props: SingleArticlePageComponentProp) => (
     <div className={props.className}>
       <Article className="page-article" articleData={props.pageContext.articleData} />
       <StyledSidebar blogData={props.pageContext.blogData} />
-      <ShareButton />
+      <Suspense fallback={null}>
+        <LazyShareButton />
+      </Suspense>
     </div>
   </Layout>
 );
