@@ -8,10 +8,7 @@ import styled from 'styled-components';
 import { Sidebar } from '../components/sidebar';
 import { ArticleData, BlogData } from '../types/blog';
 
-const LazyShareButton = loadable(() =>
-  import('../components/share_button').then((module) => module.ShareButton),
-  {}
-);
+const LazyShareButton = loadable(() => import('../components/share_button').then((module) => module.ShareButton), {});
 
 type SingleArticlePageProp = {
   pageContext: {
