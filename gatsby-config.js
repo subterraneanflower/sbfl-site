@@ -49,12 +49,6 @@ module.exports = {
         fileName: `types/graphql-types.d.ts`
       }
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-43559872-1'
-      }
-    },
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-feed`,

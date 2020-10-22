@@ -82,7 +82,16 @@ function SEO({ description, lang = 'ja', meta, title }: SeoProps) {
           content: metaDescription
         }
       ].concat(meta || [])}
-    />
+    >
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-34RNGYS3HP"></script>
+      <script dangerouslySetInnerHTML={{__html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-34RNGYS3HP');
+      `}}/>
+    </Helmet>
   );
 }
 
